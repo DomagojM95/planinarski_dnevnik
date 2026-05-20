@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Statistika
+{% endblock %}
+
+{% block body %}
+
+<h1 class="mb-5">
+    📊 Dashboard statistike
+</h1>
+
+
+<div class="row mb-5">
+
+    <div class="col-md-3">
+
+        <div class="card text-center p-3">
+
+            <h3>
+                {{ ukupan_broj }}
+            </h3>
+
+            <p>
+                Ukupno izleta
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="col-md-3">
+
+        <div class="card text-center p-3">
+
+            <h3>
+                {{ ukupna_kilometraza }} km
+            </h3>
+
+            <p>
+                Ukupna kilometraža
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="col-md-3">
+
+        <div class="card text-center p-3">
+
+            <h3>
+                {{ prosjecna_kilometraza }} km
+            </h3>
+
+            <p>
+                Prosječna kilometraža
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="col-md-3">
+
+        <div class="card text-center p-3">
+
+            <h3>
+                {{ najvisa_planina }} m
+            </h3>
+
+            <p>
+                Najveća nadmorska visina
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="card p-4">
+
+    <h3 class="mb-4">
+        📈 Kilometraža po izletu
+    </h3>
+
+    <canvas id="myChart"></canvas>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+<script>
+
+const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+
+    type: 'bar',
+
+    data: {
+
+        labels: {{ nazivi_planina | tojson }},
+
+        datasets: [{
+
+            label: 'Kilometraža',
+
+            data: {{ kilometraze | tojson }},
+
+            borderWidth: 1
+
+        }]
+
+    },
+
+    options: {
+
+        responsive: true,
+
+        scales: {
+
+            y: {
+
+                beginAtZero: true
+
+            }
+
+        }
+
+    }
+
+});
+
+</script>
+
+{% endblock %}

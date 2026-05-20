@@ -1,0 +1,41 @@
+body {
+
+    background: linear-gradient(
+        135deg,
+        #dfe9f3 0%,
+        #ffffff 100%
+    );
+
+    min-height: 100vh;
+}
+
+
+h1 {
+
+    font-weight: bold;
+    color: #1f3c5b;
+}
+
+
+.table {
+
+    background: white;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+
+.btn {
+
+    border-radius: 10px;
+}
+
+
+.navbar {
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}

@@ -1,0 +1,51 @@
+{% extends 'base.html' %} {% block title %} Dodaj izlet {% endblock %} {% block
+body %}
+
+<h1 class="mb-4">➕ Dodaj izlet</h1>
+
+<form action="/dodaj" method="POST">
+  <div class="mb-3">
+    <label class="form-label">Naziv planine</label>
+
+    <input type="text" name="naziv_planine" class="form-control" required />
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Datum</label>
+
+    <input type="date" name="datum" class="form-control" required />
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Kilometraža</label>
+
+    <input
+      type="number"
+      step="0.1"
+      name="kilometraza"
+      class="form-control"
+      required
+    />
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Broj sudionika</label>
+
+    <input type="number" name="broj_sudionika" class="form-control" required />
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Nadmorska visina</label>
+
+    <input
+      type="number"
+      name="nadmorska_visina"
+      class="form-control"
+      required
+    />
+  </div>
+
+  <button type="submit" class="btn btn-success">Dodaj</button>
+</form>
+
+{% endblock %}
