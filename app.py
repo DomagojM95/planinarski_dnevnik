@@ -7,13 +7,13 @@ from models import Izlet
 app = Flask(__name__)
 
 
-# HOME
+
 @app.route("/")
 def home():
     return render_template("home.html")
 
 
-# POPIS IZLETA
+
 @app.route("/izleti")
 @db_session
 def index():
@@ -22,13 +22,13 @@ def index():
     return render_template("index.html", izleti=izleti)
 
 
-# FORMA ZA DODAVANJE
+
 @app.route("/dodaj")
 def dodaj_forma():
     return render_template("dodaj-izlet.html")
 
 
-# DODAJ IZLET
+
 @app.route("/dodaj", methods=["POST"])
 @db_session
 def dodaj_izlet():
@@ -53,7 +53,7 @@ def dodaj_izlet():
     return redirect("/izleti")
 
 
-# FORMA ZA UREĐIVANJE
+
 @app.route("/uredi/<int:id>")
 @db_session
 def uredi_forma(id):
@@ -62,7 +62,7 @@ def uredi_forma(id):
     return render_template("uredi-izlet.html", izlet=izlet)
 
 
-# UREDI IZLET
+
 @app.route("/uredi/<int:id>", methods=["POST"])
 @db_session
 def uredi_izlet(id):
@@ -82,7 +82,7 @@ def uredi_izlet(id):
     return redirect("/izleti")
 
 
-# DELETE
+
 @app.route("/delete/<int:id>", methods=["POST"])
 @db_session
 def delete_izlet(id):
@@ -94,7 +94,7 @@ def delete_izlet(id):
     return redirect("/izleti")
 
 
-# STATISTIKA + VIZUALIZACIJA
+
 @app.route("/statistika")
 @db_session
 def statistika():
@@ -129,6 +129,6 @@ def statistika():
     )
 
 
-# POKRETANJE APLIKACIJE
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
