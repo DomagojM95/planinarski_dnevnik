@@ -17,8 +17,20 @@ Planinarski Dnevnik koristi SQLite bazu podataka za pohranu podataka, Flask fram
 
 ## Instalacija
 
-Skidanje koda s GitHub-a:
+## Skidanje koda s GitHub-a:
 
+```bash
 cd ~/Downloads
-git clone https://github.com/USERNAME/planinarski_dnevnik.git
+git clone https://github.com/DomagojM95/planinarski_dnevnik.git
 cd planinarski_dnevnik
+```
+
+---
+
+## Docker tutorial:
+
+```bash
+docker build -t planinarski-dnevnik .
+docker ps
+docker run -p 5000:5000 planinarski-dnevnik
+```
